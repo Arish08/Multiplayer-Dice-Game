@@ -63,7 +63,7 @@ if(playing){
     playing=false
     diceimg.classList.add('hidden')
     document.querySelector(`.player--${activePlayer}`).classList.add("player--winner")
-    player2.classList.remove(`player--${activePlayer}`)
+    document.querySelector(`.player--${activePlayer}`).classList.remove(`player--active`)
 
     }
     else{
@@ -71,6 +71,32 @@ if(playing){
     }
 }
 })
+
+// Resetting Game
+dicenew.addEventListener("click", function(){
+    reset()
+})
+
+const reset = function() {
+mainscore=[0,0]
+activePlayer=0;
+currentScore=0;
+score0.textContent=0 
+score1.textContent=0 
+currentscore0.textContent=0
+currentscore1.textContent=0  
+diceimg.classList.add('hidden');
+playing = true;
+
+player1.classList.remove('player--winner');
+player2.classList.remove('player--winner');
+
+player1.classList.add('player--active');
+player2.classList.remove('player--active');
+
+
+
+}
 
 
 
